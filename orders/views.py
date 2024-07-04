@@ -17,8 +17,8 @@ class OrdersViewSet(viewsets.ModelViewSet):
     def list(self, request: Request):
         if member_id := request.query_params.get('memberId', None):
             try:
-                getMember = Orders.objects.get(id=member_id)
-            except Orders.DoesNotExist:
+                getMember = Member.objects.get(id=member_id)
+            except Member.DoesNotExist:
                 raise Http404('존재하지 않는 회원입니다.')
             orders = Orders.objects.filter(member_id=member_id)
         else:
@@ -35,7 +35,7 @@ class OrdersViewSet(viewsets.ModelViewSet):
         try:
             member = Member.objects.get(id=data['member_id'])
         except Member.DoesNotExist:
-            raise ValidationError('존재하지 않는 회원입니다.')
+            raise Http404('존재하지 않는 회원입니다.')
         
         order = Orders(member=member)
         order_items = []
