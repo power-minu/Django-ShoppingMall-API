@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'orders',
     'rest_framework',
     'django_restframework'
+
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    '13.209.173.213'
 ]
 
 ROOT_URLCONF = 'config.urls'
