@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'items',
     'orders',
     'rest_framework',
-    'django_restframework'
+    'django_restframework',
 
     'corsheaders'
 ]
