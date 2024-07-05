@@ -64,7 +64,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    '13.209.173.213'
+    'http://13.209.173.213'
 ]
 
 ROOT_URLCONF = 'config.urls'
