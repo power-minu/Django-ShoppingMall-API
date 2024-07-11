@@ -28,7 +28,11 @@ SECRET_KEY = 'django-insecure-!qjt@^&_cq(9j+6*+%9(p05y=^ovo1_i9ozdcbr&&4td5v-)zr
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '13.209.173.213'
+    '13.209.173.213',
+    '127.0.0.1',
+    'localhost',
+    'api.hongikminushop.shop',
+    'hongikminushop.shop'
 ]
 
 
@@ -63,9 +67,16 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://13.209.173.213'
-]
+#CORS_ALLOWED_ORIGINS = [
+    #'http://13.209.173.213',
+    #'http://localhost:3000',
+    #'http://127.0.0.1:3000',
+    #'http://172.30.1.38:3000',
+    #'http://211.58.211.252:3000',
+    #'http://211.58.211.252:5173',
+#]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'config.urls'
 
